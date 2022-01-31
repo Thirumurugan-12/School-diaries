@@ -1,0 +1,8 @@
+
+#creating background
+background_image = PhotoImage(file="Pics\Sublime Light.jpg")
+
+
+background = Label(root, image=background_image, bd=0)
+background.grid()
+
