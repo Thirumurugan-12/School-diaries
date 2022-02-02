@@ -23,6 +23,8 @@ def regist_batch():
         batch_year_entry.delete(0, END)
         batch_intake_combo.current(0)
 
+    def back():
+        root.destroy()
 
     def load_data():
         f=open("Credentials.csv","r")
@@ -220,7 +222,7 @@ def regist_batch():
     back_img = ImageTk.PhotoImage(file='Pics\\back.png')
     back_button = Button(batch_frame, image=back_img,
                                 font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white"
-                                , borderwidth=0, background="white", cursor="hand2")
+                                , borderwidth=0, background="white", cursor="hand2",command=back)
     back_button.image = back_img
     back_button.place(x=410, y=270)
 

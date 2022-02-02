@@ -26,6 +26,9 @@ def regist_depart():
         a=d[::-1]
         return (a[0])
 
+    def back():
+        root.destroy()
+
     def click_clear_button():
         department_code_entry.delete(0, END)
         department_name_entry.delete(0, END)
@@ -208,7 +211,7 @@ def regist_depart():
     back_img = ImageTk.PhotoImage(file='Pics\\back.png')
     back_button = Button(dept_frame, image=back_img,
                                 font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white"
-                                , borderwidth=0, background="white", cursor="hand2")
+                                , borderwidth=0, background="white", cursor="hand2",command=back)
     back_button.image = back_img
     back_button.place(x=410, y=270)
 

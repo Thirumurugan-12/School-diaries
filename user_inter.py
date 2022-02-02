@@ -162,17 +162,17 @@ def user_interfun():
     password_entry.place(x=687, y=361, width=145)
 
     #buttons
-    submit = ImageTk.PhotoImage(file='Pics\submit.png')
+    submit = ImageTk.PhotoImage(file='Pics\connect_database.png')
     submit_button = Button(root, image=submit,font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white",borderwidth=0, background="white", cursor="hand2",command=check)
-    submit_button.place(x=655, y=440)
+    submit_button.place(x=655, y=443)
 
     login_pic = ImageTk.PhotoImage(file='Pics\login.png')
     login_button_1 = Button(root, image=login_pic,font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white",borderwidth=0, background="white", cursor="hand2",command=login1)
     login_button_1.place(x=785, y=442)
 
-    sign_up = ImageTk.PhotoImage(file='Pics\\register.png')
-    sign_up_button = Button(root, image=sign_up,font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white",borderwidth=0, background="white", cursor="hand2",command=change_sign)
-    sign_up_button.place(x=785,y=490)
+    #sign_up = ImageTk.PhotoImage(file='Pics\\register.png')
+    #sign_up_button = Button(root, image=sign_up,font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white",borderwidth=0, background="white", cursor="hand2",command=change_sign)
+    #sign_up_button.place(x=785,y=490)
     
     root.mainloop()
 

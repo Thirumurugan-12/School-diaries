@@ -1,3 +1,4 @@
+from distutils import command
 from tkinter import *
 from tkinter import ttk
 from PIL import Image,ImageTk 
@@ -65,6 +66,9 @@ def course_reg():
         except BaseException as msg:
             print(msg)
             messagebox.showerror("Error", f"There is some error Submitting Credentials")
+    
+    def back():
+        root.destroy()
 
     def validation():
         """this will validate if the course code and name of entry fields are already in database table named
@@ -204,7 +208,7 @@ def course_reg():
     back_img = ImageTk.PhotoImage (file='Pics\\back.png')
     back_button = Button(course_frame, image=back_img,
                                 font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white"
-                                , borderwidth=0, background="white", cursor="hand2")
+                                , borderwidth=0, background="white", cursor="hand2",command=back)
     back_button.image = back_img
     back_button.place(x=410, y=270)
 

@@ -133,13 +133,16 @@ def regist_stu():
         batch_combo.current(0)
         section_combo.current(0)
 
+    def back():
+        root.destroy()
+
     def exit():
         ask = messagebox.askyesnocancel("Confirm Exit", "Are you sure you want to Exit\n Student Registration Form?")
         if (ask == True):
             root.destroy()
 
     root = Toplevel()
-    root.title('COLLEGE MANAGEMENT SYSTEM')
+    root.title('SCHOOL MANAGEMENT SYSTEM')
     root.geometry('1067x600')
     root.config(bg="#f29844")
     #root.iconbitmap('images\\logo.ico')
@@ -545,8 +548,8 @@ def regist_stu():
         (file='Pics\\back.png')
     back_button = Button(options_frame, image=back_img,
                                 font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white"
-                                , borderwidth=0, background="white", cursor="hand2")
-                                #, command=click_back_button)
+                                , borderwidth=0, background="white", cursor="hand2"
+                                , command=back)
     back_button.image = back_img
     back_button.place(x=410, y=13)
 

@@ -127,6 +127,8 @@ def regist_emp():
 
             else:
                 click_submit()
+    def back():
+        root.destroy()
 
     def click_submit():
         """initialize when click submit button, which will take data from entry box
@@ -463,7 +465,7 @@ def regist_emp():
     back_img = ImageTk.PhotoImage(file='Pics\\back.png')
     back_button = Button(options_frame, image=back_img,
                                 font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white"
-                                , borderwidth=0, background="white", cursor="hand2")
+                                , borderwidth=0, background="white", cursor="hand2",command=back)
     back_button.image = back_img
     back_button.place(x=410, y=13)
 

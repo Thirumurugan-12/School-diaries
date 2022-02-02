@@ -1,4 +1,6 @@
+from cProfile import label
 from distutils import command
+from logging import root
 from tkinter import *
 from tkinter import ttk
 from PIL import Image,ImageTk 
@@ -31,7 +33,8 @@ def load_data():
     a=d[::-1]
     return (a[0])
     
-
+def click_logout():
+    root.destroy()
 
 def dashboard():
 
@@ -104,7 +107,7 @@ def dashboard():
 
         except BaseException as msg:
             print(msg)
-
+    
     def click_manage():
             """ opens new frame from where one can go to manage students, employees, departments, course, section
             and batch"""
@@ -174,6 +177,9 @@ def dashboard():
         view_panel.image=view_dashboard_frame
         view_panel.pack(fill='both', expand='yes')
 
+
+
+
         #department_view_label = Label(view_frame, text="View Department Information ", bg="white", fg="#4f4e4d",font=("yu gothic ui", 13, "bold"))
         #department_view_label.place(x=770, y=290)
 
@@ -224,7 +230,7 @@ def dashboard():
 
             style = ttk.Style()
             style.configure("Treeview.Heading", font=('yu gothic ui', 10, "bold"), foreground="red")
-            style.configure("Treeview", font=('yu gothic ui', 9, "bold"), foreground="#f29b0f")
+            #style.configure("Treeview", font=('yu gothic ui', 9, "bold"), foreground="black")
 
             scroll_y = Scrollbar(view_student_frame, orient=VERTICAL)
             scroll_x = Scrollbar(view_student_frame, orient=HORIZONTAL)
@@ -489,13 +495,13 @@ def dashboard():
         date_time.after(100, time_running)
 
 
-
+    
     root = Toplevel()
     root.geometry("1067x600")
     root.title("Dashboard")
     root.resizable(False, False) 
     #root.iconbitmap('images\\logo.ico')
-
+    
     bg = ImageTk.PhotoImage(file="files\Dashboard1.jpg")
     lbl_bg = Label(root,image=bg)
     lbl_bg.image = bg
@@ -558,7 +564,7 @@ def dashboard():
     exit_button.place(x=37, y=490)
 
     logout = ImageTk.PhotoImage(file='Pics\logout.png')
-    logout_button = Button(root, image=logout,font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white", borderwidth=0, background="white", cursor="hand2")
+    logout_button = Button(root, image=logout,font=("yu gothic ui", 13, "bold"), relief=FLAT, activebackground="white", borderwidth=0, background="white", cursor="hand2",command=click_logout)
     logout_button.image = logout
     logout_button.place(x=940, y=56)
 
