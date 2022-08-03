@@ -1,2 +1,3 @@
 # School-diaries
-School term 2 project 
+
+A project based on the mysql database and tkinter framework 
